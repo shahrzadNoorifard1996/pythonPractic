@@ -1,0 +1,6 @@
+def killo2gr(value):
+    result=value*1000
+    return result
+K_value=int(input('please enter the value in killo grm : '))
+print('your value in gr is: ',killo2gr(K_value))
+    
