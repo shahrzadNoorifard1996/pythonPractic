@@ -1,0 +1,21 @@
+def sum_digits(n):
+    s = 0
+    while n:
+        s += n % 10
+        n //= 10
+    return s
+
+
+def reverse_digits(n):  
+  rev =0
+   while n>0:
+       rem = n %10
+       rev = (rev *10) + rem
+       n = n//10
+       return rev
+
+
+YourNum=int(input('please enter your number : '))
+print('your digit sum is : ',sum_digits(YourNum))
+print('your digit reverse is : ',reverse_digits(YourNum))
+
