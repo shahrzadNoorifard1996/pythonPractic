@@ -1,0 +1,6 @@
+def incom(x):
+    gift=0.15*x
+    return gift
+
+YourIncome=float(input('please enter your last month incom : '))
+print('your girt in this month is: ',incom(YourIncome))
