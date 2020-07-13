@@ -1,0 +1,6 @@
+def salary(expert):
+    raisiInYear=float(750000*0.135*expert)
+    return raisiInYear
+
+expert_num=int(input('please enter number of experts: '))
+print('the money rais ',salary(expert_num))
