@@ -1,0 +1,7 @@
+import PerfectNumber
+import time
+
+n=int(input("Enter a number : "))
+start_time=time.time()
+PerfectNumber.PerfectNumber(n)
+print("----------%s secconds--------"%(time.time()-start_ti
