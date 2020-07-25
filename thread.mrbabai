@@ -1,0 +1,55 @@
+import math
+import threading
+import timeit
+from multiprocessing import Pool
+
+
+
+# function to count the divisors
+def countdivisors(n):
+    sum = 1
+    end = int(math.sqrt(n)) + 1
+    for i in range(2, end):
+        if n % i == 0:
+            sum += i
+
+            if n / i != i:
+                sum += (n / i)
+
+    if sum == n:
+        return True
+    return False
+
+
+def handelthread(start, end, name):
+    for j in range(int(start), int(start + lentgh)):
+        if countdivisors(j):
+            print("thread :", name, " find", j)
+    for j in range(int(end - lentgh), int(end)):
+        if countdivisors(j):
+            print("thread :", name, " find", j)
+
+
+n = int(input("enter num:"))
+threadcount = int(input("enter thread count:"))
+lentgh = int(n / threadcount)
+lentgh /= 2
+
+st, en = 0, n
+threads = []
+timestart = timeit.default_timer()
+
+for j in range(threadcount):
+    threads.append(threading.Thread(target=handelthread, args=(st, en, j + 1)))
+    threads[j].start()
+    st += lentgh
+    en -= lentgh
+
+
+
+for thread in threads:
+    thread.join()
+
+timestop = timeit.default_timer()
+
+print('Time: ', timestop - timestart)
